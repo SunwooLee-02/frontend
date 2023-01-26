@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자 정의 함수</h2>
+    <button onclick="f1()">Click Me!</button>
+    <script>
+        function f1(){
+            console.log('Click!');
+            console.log('Hi!');
+        }
+        function print(name, age){ // name 이라는 변수는 매개변수, parameter
+            // 매개변수에는 함수를 사용할 때 소괄호 안에서 넘겨준 값(인자값, 인수값, argument)이 대입된다.
+            console.log('Nice to meet you');
+            console.log('My name is '+ name +'.');
+            console.log('I am ' + age + '.');
+        }
+
+        print('SunwooLee', 22);
+        console.log('Today is Wednsday');
+        print('ThomasShelby', 36);
+
+        // 함수 사용 결과를 값으로 되돌리기
+        // 매개변수로 전달받은 배열의 총 합을 알아내는 함수
+        function getSumofArray(ar){
+            let total = 0;
+            for(let element of ar){
+                total += element;
+            }
+            console.log(total);
+            return total; // return : 함수 사용 결과를 값으로 되돌려준다.
+        }
+
+        console.log(getSumofArray([1, 5, 4]) / 3);
+
+        let res = getSumofArray([10, 20, 30, 40]);
+        console.log(res);
+
+        Math.floor(3.14);
+    </script>
+</body>
+</html>
