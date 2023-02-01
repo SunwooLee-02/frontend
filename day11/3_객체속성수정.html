@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>객체 속성값 수정</h2>
+    <script>
+        let a = {
+            name : 'Joshua',
+            age : 22,
+            info : function(){
+                console.log(`My name is ${this.name} and I'm ${this.age}.`);
+            },
+        };
+        console.log(a.name);
+        // 속성값 수정
+        a.name = 'Shelby';
+        console.log(a.name);
+        a.info();
+        // 없는 속성 생성
+        a.address = 'Toronto';
+
+        console.log(a.address);
+
+        // 메소드 수정
+        a.info = function(){
+            console.log(`name : ${this.name}`);
+            console.log(`age : ${this.age}`);
+            console.log(`address : ${this.address}`);
+        };
+
+        a.info();
+
+        delete a.name;  // 속성(프로퍼티) 삭제
+        a.info();
+    </script>
+</body>
+</html>

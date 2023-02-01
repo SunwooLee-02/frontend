@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>속성과 메소드의 틀을 만들어 놓고, 속성값만 우리가 원하는대로 바꾸는 방법</h2>
+    <script>
+        // new: 연산자, 만들어진 객체를 메모리에 할당시키는 기능을 한다.
+        let a = new Book('PeakyBlinders', 'unknown', 30000);
+        // a.title = 'PeakyBlinders';
+        // a.price = 30000;
+        // a.author = 'unknown';
+        console.log(a);
+
+        let b = new Book('12Soldiers', 'Devgru', 3500);
+
+        a.show();
+        b.show();
+
+        let c = new Book();
+        c.show();
+
+        // 객체를 만들 때 사용하는 함수(생성자) 정의(앞글자가 대문자)
+        function Book(title = '기본값', author = '기본값', price = 0){
+            this.title = title;
+            this.author = author;
+            this.price = price;
+            this.show = function(){
+                console.log(`book info`);
+                console.log(`title: ${this.title}`);
+                console.log(`author: ${this.author}`);
+                console.log(`price: ${this.price}`);
+            }
+        }
+    </script>
+</body>
+</html>
